@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="ur10e">
+  <link name="world" />
+  <joint name="fixed" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="6.99102964918878E-06 0.0184354408078916 0.000159353466286333" rpy="0 0 0" />
+      <mass value="0.706324320048481" />
+      <inertia ixx="0.00115557612300412" ixy="7.8755298982374E-08" ixz="-4.80084221930866E-08" iyy="0.00212897019309279" iyz="-1.99544890443479E-07" izz="0.00114584540440243" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="motor_1">
+    <inertial>
+      <origin xyz="0.01158933358646 -0.000768670071824068 0.0784762359453558" rpy="0 0 0" />
+      <mass value="3.07354096261003" />
+      <inertia ixx="0.0107199155728018" ixy="5.01684586326567E-05" ixz="-0.000856605171120839" iyy="0.0114737929251521" iyz="5.74906624660398E-05" izz="0.0101197358967531" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor_1_revolute" type="revolute">
+    <origin xyz="0 0 0.038" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="motor_1" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="10" />
+  </joint>
+  <link name="motor_2">
+    <inertial>
+      <origin xyz="0.0836957994792213 -0.0124997941454054 0.250947464020631" rpy="0 0 0" />
+      <mass value="8.71244672305977" />
+      <inertia ixx="0.0949250367073149" ixy="0.000114307340305228" ixz="-0.000447792490631789" iyy="0.0964585009461135" iyz="0.00216122784445799" izz="0.0199762473506872" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor_2_revolute" type="revolute">
+    <origin xyz="0.085814 -0.0056588 0.09" rpy="0 0 0" />
+    <parent link="motor_1" />
+    <child link="motor_2" />
+    <axis xyz="-0.99783 0.065799 0" />
+    <limit lower="-3.14" upper="3.14" effort="5000" velocity="10" />
+  </joint>
+  <link name="motor_3">
+    <inertial>
+      <origin xyz="-0.0588206779795152 0.0125383741253737 0.256779950005447" rpy="0 0 0" />
+      <mass value="4.6534535922044" />
+      <inertia ixx="0.0514260111054704" ixy="2.64109842069441E-05" ixz="0.000209867803908835" iyy="0.0516584013489174" iyz="-0.00155612962239964" izz="0.00600707507711582" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor_3_revolute" type="revolute">
+    <origin xyz="0.020723 -0.018428 0.61266" rpy="0 0 0" />
+    <parent link="motor_2" />
+    <child link="motor_3" />
+    <axis xyz="-0.99783 0.065799 0" />
+    <limit lower="-3.14" upper="3.14" effort="2000" velocity="10" />
+  </joint>
+  <link name="motor_4">
+    <inertial>
+      <origin xyz="-0.0463163888870383 0.00274623653692133 0.00974304711898455" rpy="0 0 0" />
+      <mass value="0.72850475798328" />
+      <inertia ixx="0.00103090961212793" ixy="2.52090874057504E-06" ixz="9.10545325046022E-05" iyy="0.00111481948492859" iyz="1.66737237134338E-06" izz="0.000884008126514727" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor_4_revolute" type="revolute">
+    <origin xyz="-0.11987 0.027161 0.57127" rpy="0 0 0" />
+    <parent link="motor_3" />
+    <child link="motor_4" />
+    <axis xyz="-0.99783 0.065799 0" />
+    <limit lower="-3.14" upper="3.14" effort="59" velocity="10" />
+  </joint>
+  <link name="motor_5">
+    <inertial>
+      <origin xyz="-0.00980381073966434 -0.000713977541418622 0.0463767932630754" rpy="0 0 0" />
+      <mass value="0.728506024857824" />
+      <inertia ixx="0.000884993317438275" ixy="1.64279052344726E-05" ixz="9.07464017097927E-05" iyy="0.00111382623532637" iyz="-4.88785547036715E-06" izz="0.00103090519879602" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor_5_revolute" type="revolute">
+    <origin xyz="-0.054015 0.0015515 0.061678" rpy="0 0 0" />
+    <parent link="motor_4" />
+    <child link="motor_5" />
+    <axis xyz="-0.0021575 -0.032718 0.99946" />
+    <limit lower="-3.14" upper="3.14" effort="49" velocity="10" />
+  </joint>
+  <link name="motor_6">
+    <inertial>
+      <origin xyz="-0.0129928323598203 0.00108869265014476 0.000957366865865339" rpy="0 0 0" />
+      <mass value="0.159236531830185" />
+      <inertia ixx="0.000149157807902669" ixy="-5.65214292769788E-06" ixz="4.33097396976424E-07" iyy="8.23860197774619E-05" iyz="-5.54543686278559E-08" izz="8.77577003542501E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://ur10e/meshes/motor_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="motor_6_revolute" type="revolute">
+    <origin xyz="-0.0616 0.0033916 0.054007" rpy="0 0 0" />
+    <parent link="motor_5" />
+    <child link="motor_6" />
+    <axis xyz="-0.99649 0.083733 0.00058998" />
+    <limit lower="-3.14" upper="3.14" effort="39" velocity="10" />
+  </joint>
+
+  <transmission name="motor_1_revolute_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor_1_revolute">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_1_actuator">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="motor_2_revolute_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor_2_revolute">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_2_actuator">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="motor_3_revolute_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor_3_revolute">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_3_actuator">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="motor_4_revolute_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor_4_revolute">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_4_actuator">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="motor_5_revolute_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor_5_revolute">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_5_actuator">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="motor_6_revolute_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor_6_revolute">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_6_actuator">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/ur10e</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim </robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+</robot>

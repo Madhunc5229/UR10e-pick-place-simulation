@@ -1,0 +1,43 @@
+controller_joint_names: ['', 'motor_1_revolute', 'motor_2_revolute', 'motor_3_revolute', 'motor_4_revolute', 'motor_5_revolute', 'motor_6_revolute', ]
+
+ur10e:
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controller 1
+  motor_1_revolute_controller:
+    type: effort_controllers/JointPositionController 
+    joint: "motor_1_revolute"
+    pid : {p: 650.0, i: 0.0, d: 100.0}
+
+  # Controller 2
+  motor_2_revolute_controller:
+    type: effort_controllers/JointPositionController 
+    joint: "motor_2_revolute"
+    pid : {p: 700.0, i: 0.01, d: 69.0}
+
+  # Controller 3
+  motor_3_revolute_controller:
+    type: effort_controllers/JointPositionController  
+    joint: "motor_3_revolute"
+    pid : {p: 300.0, i: 0.01, d: 10.0}
+
+  # Controller 4
+  motor_4_revolute_controller:
+    type: effort_controllers/JointPositionController 
+    joint: "motor_4_revolute"
+    pid : {p: 420.0, i: 0, d: 10.0}
+
+  # Controller 5
+  motor_5_revolute_controller:
+    type: effort_controllers/JointPositionController 
+    joint: "motor_5_revolute"
+    pid : {p: 120.0, i: 0, d: 1.0}
+
+  # Controller 6
+  motor_6_revolute_controller:
+    type: effort_controllers/JointPositionController  
+    joint: "motor_6_revolute"
+    pid : {p: 10.0, i: 0, d: 1.0}
