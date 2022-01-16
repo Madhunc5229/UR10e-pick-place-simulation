@@ -9,7 +9,7 @@ Instructions to run the package:
 Clone the repository into you catkin workspace:
 git clone https://github.com/Madhunc5229/UR10e-pick-place-simulation
 
-UR10e_SolidWorks_models directory contains all the SolidWorks models used to export the URDF file.
+UR10e_SoildWorks_models directory contains all the SolidWorks models used to export the URDF file.
 
 Build the package using catkin_make or catkin_build
 source bash: source devel/setup.bash
