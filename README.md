@@ -7,7 +7,7 @@ SolidWorks, Python, Gazebo, RViz
 Instructions to run the package:
 
 Clone the repository into you catkin workspace:
-git clone ....
+git clone https://github.com/Madhunc5229/UR10e-pick-place-simulation
 
 UR10e_SolidWorks_models directory contains all the SolidWorks models used to export the URDF file.
 
